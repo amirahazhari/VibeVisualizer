@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrap">
+      <header>
+        <div>
+            <h1>Vibe Visualizer</h1>
+            <div class="small muted"> Upload a song or use your mic -switch styles</div>
+        </div>
+
+        <div class="controls">
+           <label class="label-btn-card" for="file"> Upload audio</label>
+              <input type="file" id="file" accept="audio/*" style="display:none">
+
+              <button id="mic-btn" class="label-btn-card"> Use Mic</button>
+              <button id="playBtn" class="card"> Play</button>
+              <button id="pauseBtn" class="label-btn-card">Pause</button>
+        </div>
+      </header>
+
+      <div id="canvasWrap" class="card">
+        <canvas id="visualizer"></canvas>
+      </div>
+
+      <div class="bottomBar">
+        <div class="row card" style="padding:10px">
+            <label class="small muted">Current Style: </label>
+            <select id="mode" title="Visualization style">
+                <option value="bars">Bars</option>
+                <option value="circles">Circles</option>
+                <option value="waveform">Waveform</option>
+                <option value="particles">Particles</option>
+            </select>
+
+            <label class="small muted">Sensitivity: </label>
+            <input id="sensitivity" type="range" min="0.5" max="6" step="0.1" value="2" title="Adjust visualization sensitivity"/>
+            
+            <label class="small muted">Color Scheme: </label>
+            <input id="accent" type="color" value="#7c3aed" title="Adjust color scheme"/>
+        </div>
+
+        <div class="row">
+            <div class="small muted card" style="padding: 8px 12px"> Tip: Use a bright song & record vertical 9:16 for TikTok </div>
+
+        </div>
+      </div>
+
+      <footer>Code uses the Web Audio API + canvas</footer>
+    </div>
+</div>
+    
+</body>
+</html>
